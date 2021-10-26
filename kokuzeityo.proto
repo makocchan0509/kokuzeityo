@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package="sample.masem.grpc";
+option java_outer_classname ="HelloWorldProto";
+option go_package = "/kokuzeityo";
+
+package kokuzeityo;
+
+service Kokuzeityo {
+    rpc GetCorporation(getCorpReq) returns (getCorpRes){}
+}
+
+message getCorpReq {
+    string version = 1;
+    string appId = 2;
+    repeated string corporateNumber = 3;
+}
+
+message getCorpRes {
+    string result = 1;
+    string msg = 2;
+    int32 count = 3;
+    repeated corp corps = 4;
+}
+
+message corp {
+    string corporateNumber =1;
+    string updateDate = 2;
+    string changeDate = 3;
+    string corpName = 4;
+    string nameImageId = 5;
+    string kind = 6;
+    string prefectureName = 7;
+    string cityName =8;
+    string streetNumber = 9;
+    string addressImageId = 10;
+    string prefectureCd = 11;
+    string cityCode = 12;
+    string postCode = 13;
+    string addressOutside = 14;
+    string addressOutsideImageId = 15;
+    string closeDate = 16;
+    string closeCause = 17;
+    string successorCorporateNumber = 18;
+    string changeCause = 19;
+    string assignmentDate = 20;
+    string latest =21;
+    string enName =22;
+    string enPrefectureName = 23;
+    string enCityName = 24;
+    string enAddressOutside = 25;
+    string furigana = 26;
+    string hihyoji = 27;
+}
+
